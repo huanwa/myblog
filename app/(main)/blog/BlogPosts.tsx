@@ -14,7 +14,7 @@ export async function BlogPosts({ limit = 5 }) {
     views = posts.map(() => Math.floor(Math.random() * 1000))
   } else {
     views = await redis.mget<number[]>(...postIdKeys)
-  }
+    }
   }
 
   return (
